@@ -1,6 +1,7 @@
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Header from "./components/Header/Header";
+import Home from "./components/Home/Home";
 
 function App() {
   return (
@@ -15,7 +16,7 @@ function App() {
             <h1>Checkout page</h1>
           </Route>
           <Route path={"/"} exact>
-            <h1>Amazon clone Home page!!!</h1>
+            <Home />
           </Route>
         </Switch>
       </div>
