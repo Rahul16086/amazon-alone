@@ -15,7 +15,7 @@ const Home = () => {
       />
       <div className={"home__row"}>
         <Product
-          id={Math.random()}
+          id={29999}
           title={
             "Mi 11X 5G Celestial Silver 6GB RAM 128GB ROM | SD 870 | DisplayMate A+ rated E4 AMOLED"
           }
@@ -26,10 +26,8 @@ const Home = () => {
           }
         />
         <Product
-          id={Math.random()}
-          title={
-            "Mi 11X 5G Celestial Silver 6GB RAM 128GB ROM | SD 870 | DisplayMate A+ rated E4 AMOLED"
-          }
+          id={12999}
+          title={"Kent Suthamaana thanni provider"}
           rating={5}
           price={12999}
           image={
@@ -39,7 +37,7 @@ const Home = () => {
       </div>
       <div className={"home__row"}>
         <Product
-          id={Math.random()}
+          id={61999}
           title={
             'Acer Swift 3 14" Full HD IPS Display Ultra Thin and Light Notebook (Intel i5 - 11th Gen/16 GB RAM/512GB SSD/Win10/Intel Iris Xe Graphics/Pure Silver/1.2Kg), SF314-59'
           }
@@ -50,7 +48,7 @@ const Home = () => {
           }
         />
         <Product
-          id={Math.random()}
+          id={31990}
           title={"iQOO 7 5G (Solid Ice Blue, 8GB RAM, 128GB Storage)"}
           rating={4}
           price={31990}
@@ -59,7 +57,7 @@ const Home = () => {
           }
         />
         <Product
-          id={Math.random()}
+          id={208052}
           title={
             "Sony Bravia 189 cm (75 inches) 4K Ultra HD Smart LED Google TV 75X80J"
           }
@@ -72,7 +70,7 @@ const Home = () => {
       </div>
       <div className={"home__row"}>
         <Product
-          id={Math.random()}
+          id={34788}
           title={
             "Intel RealSense Depth Camera D455 with IMU Upto 1080P (USB Type-C Port)"
           }

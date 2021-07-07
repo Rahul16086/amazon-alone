@@ -3,13 +3,14 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { BrowserRouter } from "react-router-dom";
+import { UserDataProvider } from "./Store/UserData";
+import reducer, { initialState } from "./Store/reducer";
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
+    <UserDataProvider initialState={initialState} reducer={reducer}>
       <App />
-    </BrowserRouter>
+    </UserDataProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );
