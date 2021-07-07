@@ -9,6 +9,7 @@
     background-color: white;
     z-index: 1;
     padding: 20px;
+    width: 100%;
 }
 
 .product>img{

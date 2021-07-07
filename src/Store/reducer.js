@@ -3,13 +3,29 @@ export const initialState = {
   user: null,
 };
 
+export const getCartTotal = (cart) =>
+  cart?.reduce((amount, item) => item.price + amount, 0);
+
 const reducer = (state, action) => {
   console.log(action);
   switch (action.type) {
     case "ADD_TO_CART":
       return { ...state, cart: [...state.cart, action.item] };
     case "REMOVE_FROM_CART":
-      return { state };
+      let newCart = [...state.cart];
+
+      const index = state.cart.findIndex(
+        (cartItem) => cartItem.id === action.id
+      );
+
+      if (index >= 0) {
+        newCart.splice(index, 1);
+      } else {
+        console.warn(
+          `Can't remove item with id: ${action.id} as it is not available in the cart`
+        );
+      }
+      return { ...state, cart: newCart };
     default:
       return state;
   }
