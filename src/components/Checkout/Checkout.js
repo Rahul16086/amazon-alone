@@ -31,6 +31,7 @@ const Checkout = () => {
             price={item.price}
             rating={item.rating}
             image={item.image}
+            key={item.id * Math.random() * 10000}
           />
         ))}
       </div>

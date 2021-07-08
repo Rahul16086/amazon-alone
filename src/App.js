@@ -1,5 +1,5 @@
 import "./App.css";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Header from "./components/Header/Header";
 import Home from "./components/Home/Home";
 import Checkout from "./components/Checkout/Checkout";
@@ -9,7 +9,7 @@ import { useEffect } from "react";
 import { auth } from "./firebase";
 
 function App() {
-  const [{ user }, dispatch] = useStateValue();
+  const [, dispatch] = useStateValue();
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
@@ -29,9 +29,7 @@ function App() {
     return () => {
       unsubscribe();
     };
-  }, []);
-
-  console.log("👤 is > ", user);
+  }, [dispatch]);
 
   return (
     <Router>

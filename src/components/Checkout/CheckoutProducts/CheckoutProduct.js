@@ -3,7 +3,7 @@ import "./CheckoutProduct.css";
 import { useStateValue } from "../../../Store/UserData";
 
 const CheckoutProduct = (props) => {
-  const [{ cart }, dispatch] = useStateValue();
+  const [, dispatch] = useStateValue();
 
   const removeFromCartHandler = () => {
     dispatch({ type: "REMOVE_FROM_CART", id: props.id });
@@ -23,7 +23,7 @@ const CheckoutProduct = (props) => {
           {Array(props.rating)
             .fill(null)
             .map((_) => (
-              <p>⭐</p>
+              <p key={Math.random()}>⭐</p>
             ))}
         </div>
         <button onClick={removeFromCartHandler}>Remove from Cart</button>

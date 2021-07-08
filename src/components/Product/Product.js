@@ -31,7 +31,7 @@ const Product = (props) => {
           {Array(props.rating)
             .fill(null)
             .map((_) => (
-              <p>⭐</p>
+              <p key={Math.random() * 90}>⭐</p>
             ))}
         </div>
         <p>{props.rating}/5</p>

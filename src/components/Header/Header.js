@@ -8,7 +8,6 @@ import { auth } from "../../firebase";
 
 const Header = () => {
   const [{ cart, user }] = useStateValue();
-  console.log(cart);
 
   const login = () => {
     if (user) auth.signOut();

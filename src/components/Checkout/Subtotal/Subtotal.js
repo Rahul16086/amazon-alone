@@ -5,7 +5,7 @@ import { useStateValue } from "../../../Store/UserData";
 import { getCartTotal } from "../../../Store/reducer";
 
 const Subtotal = () => {
-  const [{ cart }, dispatch] = useStateValue();
+  const [{ cart }] = useStateValue();
 
   return (
     <div className={"subtotal"}>
