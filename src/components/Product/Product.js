@@ -22,8 +22,6 @@ const Product = (props) => {
     <div className={"product"}>
       <div className={"product__info"}>
         <p>{props.title}</p>
-
-        <p>{props.rating}/5</p>
         <div className={"product__price"}>
           <p>
             ₹<strong>{props.price}</strong>
@@ -36,6 +34,7 @@ const Product = (props) => {
               <p>⭐</p>
             ))}
         </div>
+        <p>{props.rating}/5</p>
       </div>
       <img src={props.image} alt={"productImage"} />
       <button onClick={addToCartHandler}>Add to Cart</button>
