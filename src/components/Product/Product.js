@@ -4,7 +4,6 @@ import { useStateValue } from "../../Store/UserData";
 
 const Product = (props) => {
   const [, dispatch] = useStateValue();
-
   const addToCartHandler = () => {
     dispatch({
       type: "ADD_TO_CART",
@@ -28,13 +27,13 @@ const Product = (props) => {
           </p>
         </div>
         <div className={"product__rating"}>
+          <p className={"rating"}>{props.rating}/5</p>
           {Array(props.rating)
             .fill(null)
             .map((_) => (
               <p key={Math.random() * 90}>⭐</p>
             ))}
         </div>
-        <p>{props.rating}/5</p>
       </div>
       <img src={props.image} alt={"productImage"} />
       <button onClick={addToCartHandler}>Add to Cart</button>
