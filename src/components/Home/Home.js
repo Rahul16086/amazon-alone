@@ -1,23 +1,27 @@
 import React, { useEffect, useState } from "react";
 import "./Home.css";
 import Product from "../Product/Product";
+import Loading from "../../Loading/Loading";
 
 const Home = () => {
   const [items, setItems] = useState("");
-
+  const [loading, setLoading] = useState(false);
   useEffect(() => {
-    const url = "https://fakestoreapi.com/products?limit=14";
+    setLoading(true);
+    const url = "https://fakestoreapi.com/products?limit=21";
     fetch(url)
       .then((res) => {
         return res.json();
       })
       .then((items) => {
         setItems(items);
+        setLoading(false);
       });
   }, []);
 
   return (
     <>
+      {loading && <Loading />}
       {items?.length > 0 && (
         <div className={"home"}>
           <img
@@ -98,16 +102,13 @@ const Home = () => {
           {/*</div>*/}
           <div className={"home__row"}>
             {items?.map((item) => {
-              let low = 1;
-              let high = 5;
-              let rating = Math.floor(Math.random() * (1 + high - low) + low);
               return (
                 <Product
                   id={item.id}
                   title={item.title}
                   price={item.price * 100}
                   image={item.image}
-                  rating={rating}
+                  //rating={Math.floor(Math.random() * (1 + 5 - 1) + 1)}
                   key={Math.floor(Math.random() * 100000)}
                 />
               );
