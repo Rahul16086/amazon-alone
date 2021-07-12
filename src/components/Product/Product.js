@@ -26,14 +26,14 @@ const Product = (props) => {
             ₹<strong>{props.price}</strong>
           </p>
         </div>
-        {/*<div className={"product__rating"}>*/}
-        {/*  <p className={"rating"}>{props.rating}/5</p>*/}
-        {/*  {Array(props.rating)*/}
-        {/*    .fill(null)*/}
-        {/*    .map((_) => (*/}
-        {/*      <p key={Math.random() * 90}>⭐</p>*/}
-        {/*    ))}*/}
-        {/*</div>*/}
+        <div className={"product__rating"}>
+          <p className={"rating"}>{props.rating}/5</p>
+          {Array(props.rating)
+            .fill(null)
+            .map((_) => (
+              <p key={Math.random() * 90}>⭐</p>
+            ))}
+        </div>
       </div>
       <img src={props.image} alt={"productImage"} />
       <button onClick={addToCartHandler}>Add to Cart</button>

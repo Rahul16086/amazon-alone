@@ -6,6 +6,8 @@ import Loading from "../../Loading/Loading";
 const Home = () => {
   const [items, setItems] = useState("");
   const [loading, setLoading] = useState(false);
+  let ratedItems = [];
+
   useEffect(() => {
     setLoading(true);
     const url = "https://fakestoreapi.com/products?limit=21";
@@ -14,7 +16,17 @@ const Home = () => {
         return res.json();
       })
       .then((items) => {
-        setItems(items);
+        for (const item in items) {
+          let rating = Math.floor(Math.random() * (1 + 5 - 1) + 1);
+          ratedItems.push({
+            title: items[item].title,
+            id: items[item].id,
+            price: items[item].price,
+            image: items[item].image,
+            rating: rating,
+          });
+        }
+        setItems(ratedItems);
         setLoading(false);
       });
   }, []);
@@ -109,6 +121,7 @@ const Home = () => {
                   price={item.price * 100}
                   image={item.image}
                   //rating={Math.floor(Math.random() * (1 + 5 - 1) + 1)}
+                  rating={item.rating}
                   key={Math.floor(Math.random() * 100000)}
                 />
               );
