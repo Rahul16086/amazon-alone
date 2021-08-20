@@ -2,19 +2,34 @@
     background-color: #131921;
     display: flex;
     align-items: center;
-    position: sticky;
+    position: fixed;
     top: 0;
     z-index: 100;
+    height: 8vh;
+    width: 100vw;
 }
 
 .header__logo{
-    width: 100px;
+    width: 7vw;
     margin-left: 20px;
     margin-right: 20px;
     margin-top: 18px;
     object-fit: contain;
 }
 
+.header__leftSide{
+    display: flex;
+    align-items: center;
+    width: 80vw;
+}
+
+.header__searchContainer{
+    width: 80vw;
+}
+
+.header__searchContainerM{
+    display: none;
+}
 .header__search{
     display: flex;
     flex: 1;
@@ -26,6 +41,7 @@
     padding: 10px;
     border: none;
 }
+
 .header__searchIcon{
     background-color: #cd9042;
     padding: 5px;
@@ -34,7 +50,8 @@
 
 .header__nav{
     display: flex;
-    justify-content: space-evenly;
+    align-items: center;
+    justify-content: flex-end;
 }
 
 .header__option{
@@ -58,6 +75,10 @@
     text-decoration: none;
 }
 
+.header__linkM{
+    display: none;
+}
+
 .header__optionCart{
     display: flex;
     align-items: center;
@@ -66,4 +87,97 @@
 .header__cartCount{
     margin-left: 10px;
     margin-right: 10px;
+}
+
+.hamburger{
+    display: none;
+    color: white;
+}
+
+.header__optionM{
+    display: flex;
+    flex-direction: column;
+}
+
+.userNameM{
+    display: none;
+}
+
+@media (max-width:40rem) {
+    .header{
+        width: 100vw;
+        flex-direction: column;
+        padding: 0;
+        height: 14vh;
+    }
+
+    .header__leftSide{
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .header__leftSide img{
+        /*margin-right: 40vw;*/
+    }
+    .header__rightSideM{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #131921;
+        width: 100vw;
+    }
+
+    .header__rightSideM a{
+        margin: 10px;
+        font-size: .75rem;
+    }
+
+    .header__nav{
+        display: none;
+    }
+
+    .header__logo{
+        width: 20vw;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .header__link{
+        display: none;
+    }
+
+    .header__linkM{
+        display: flex;
+        color: white;
+        text-decoration: none;
+    }
+
+    .hamburger{
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    .header__searchContainer{
+        display: none;
+    }
+
+    .header__searchContainerM{
+        display: flex;
+        width: 90vw;
+    }
+
+    .header__option{
+        display: flex;
+        font-weight: 500;
+    }
+
+    .header__cartCount{
+        margin: 0 5px 0 0;
+    }
+
+    .userNameM{
+        display: flex;
+        width: 50vw;
+    }
 }
